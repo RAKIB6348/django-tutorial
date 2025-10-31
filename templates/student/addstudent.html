@@ -48,8 +48,12 @@ input[type=submit]:hover {
   <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
 <label for="department">Department</label>
-  <input type="text" id="department" name="department" placeholder="Your last name..">
-  
+  <select id="department" name="department">
+    <option value="" disabled>Select Department</option>
+    {% for dept in departments %}
+      <option value="{{dept.id}}">{{dept.name}}</option>
+    {% endfor %}
+  </select>  
   <input type="submit" value="Add Student">
 </form>
 
